@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ZOVORA/static/css/main.59c33010.css",
+    "main.js": "/ZOVORA/static/js/main.498e3ec8.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/ZOVORA/static/js/787.9e9f4ffd.chunk.js",
+    "index.html": "/ZOVORA/index.html",
+    "main.59c33010.css.map": "/ZOVORA/static/css/main.59c33010.css.map",
+    "main.498e3ec8.js.map": "/ZOVORA/static/js/main.498e3ec8.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/ZOVORA/static/js/787.9e9f4ffd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59c33010.css",
+    "static/js/main.498e3ec8.js"
+  ]
+}
