@@ -4,6 +4,7 @@ import connectDB from './config/db.js';
 dotenv.config();
 import productRoutes from './routes/ProductRoutes.js';
 const port =process.env.PORT || 5000;
+import { notfound ,errorHandler } from './middleware/errorHandler.js';
 
 
 connectDB();
@@ -21,3 +22,6 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running at ${port}`);
 });
+
+app.use(notfound);
+app.use(errorHandler);
