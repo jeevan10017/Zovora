@@ -1,3 +1,4 @@
+import {useState} from 'react'; 
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
@@ -9,6 +10,9 @@ import Message from '../components/Message';
 
 const ProductScreen = () => {
   const { id: productId } = useParams();
+
+  const [qty, setQty] = useState(1); // local state
+
   const { data: product, isLoading, error } = useGetProductDetailsQuery(productId);
 
   return (
@@ -57,11 +61,24 @@ const ProductScreen = () => {
                 <Row>
                   <Col>Status:</Col>
                   <Col>
+                  <strong>
                     {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                    </strong>
                   </Col>
                 </Row>
               </ListGroup.Item>
-
+{product.countInStock > 0 && (
+    <ListGroup.Item>
+        <Row>
+            <Col>Qty</Col>
+            <Col>
+                <select value={qty} onChange={(e)=>setQty(e.target.value)}>
+                    {[...Array(product.countInStock).keys()].map((x)=>(
+                        <option key={x+1} value={x+1}>
+                            {x+1}
+                        </option>
+                    ))}
+                </select>
               <ListGroup.Item>
                 <Button
                   className='btn-block'
